@@ -9,20 +9,24 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function compares slider with random number.
+ * This function calculates which movie rate you can watch.
  */
 function calculate() {
 
   //input
-  const number = parseInt(document.getElementById('number').value)
+  const age = parseInt(document.getElementById('age').value)
 
   // process
-  if (number >= 0) {
+  if (age >= 17) {
     document.getElementById("answer").innerHTML =
-      "The number " + number + " is a positive number."
+      "You you are " + age + " years old, so you can see R rated movies."
+  }
+  else if (age >= 13){
+    document.getElementById("answer").innerHTML =
+      "You are " + age + " years old, so you can see PG-13 rated movies."
   }
   else {
     document.getElementById("answer").innerHTML =
-      "The number " + number + " is a negative number."
+      "You are " + age + " years old, so you can see G rated movies."
   }
 }
